@@ -82,4 +82,10 @@ var data = {
     { title: "Table top games/DnD" },
     { title: "Fantasy books and movies/tv shows" },
   ],
+  social: [
+    { title: "Facebook", link: ``, icon: "Img/social/facebook.png" },
+    { title: "GitHub", link: ``, icon: "Img/social/github-sign.png" },
+    { title: "GMail", link: ``, icon: "Img/social/gmail.png" },
+    { title: "LinkedIn", link: ``, icon: `Img/social/linkedin (2).png` },
+  ],
 };
