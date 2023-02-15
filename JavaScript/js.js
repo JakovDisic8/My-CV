@@ -93,3 +93,9 @@ var data = {
     { title: "LinkedIn", link: ``, icon: `Img/social/linkedin (2).png` },
   ],
 };
+
+var aboutMeBtn = document.getElementById(`aboutMe`);
+var myEdBtn = document.getElementById(`myEd`);
+var myHobBtn = document.getElementById(`myHob`);
+var mySkillsBtn = document.getElementById(`mySkills`);
+var myProjectsBtn = document.getElementById(`myProjects`);
