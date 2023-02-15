@@ -62,18 +62,22 @@ var data = {
     {
       title: "Html",
       perc: 100,
+      img: `Img/skill/icons8-html-5-50.png`,
     },
     {
       title: "CSS",
       perc: 100,
+      img: `Img/skill/icons8-css3-30.png`,
     },
     {
       title: "JavaScript",
       perc: 80,
+      img: `Img/skill/icons8-javascript-logo-50.png`,
     },
     {
       title: "React",
       perc: 70,
+      img: `Img/skill/icons8-react-30.png`,
     },
   ],
   hobbies: [
