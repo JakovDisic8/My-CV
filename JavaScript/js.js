@@ -9,7 +9,7 @@ var data = {
       number: 1,
     },
     phone: "0692858301",
-    img: "",
+    img: "Img/Jakov.jpg",
   },
   education: [
     {
