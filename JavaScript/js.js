@@ -99,3 +99,8 @@ var myEdBtn = document.getElementById(`myEd`);
 var myHobBtn = document.getElementById(`myHob`);
 var mySkillsBtn = document.getElementById(`mySkills`);
 var myProjectsBtn = document.getElementById(`myProjects`);
+
+aboutMeBtn.addEventListener(`click`, function () {
+  let infoDiv = document.getElementById(`info`);
+  infoDiv.classList.toggle(`hide`);
+});

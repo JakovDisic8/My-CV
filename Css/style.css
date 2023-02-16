@@ -2,7 +2,9 @@ body{
     padding: 0;
     margin: 0;
     display: block;
-    background-color: aqua;
+    background-image: url("Img/0e39c256714a4b7c0299323a82701647.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /* Social */
 .socialDiv{
@@ -13,7 +15,7 @@ body{
     display: flex;
     align-items: end;
     justify-content: end;    
-    background-color: rgb(44, 118, 216);
+    background-color: rgba(255, 255, 255, 0);
 }
 .socLinks{
     display: flex;
@@ -25,6 +27,14 @@ body{
 .socialImg{
     width:30px;
     margin-right: 10px;
+}
+.return{
+   position: fixed;
+   top:10px;
+   left:10px;
+}
+.returnImg{
+    width: 30px;
 }
 /* My Img */
 .myImg{
@@ -47,7 +57,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    background-color: aqua;
+    background-color: rgba(52, 73, 73, 0);
 }
 /* About Me div */
 .aboutMeDiv{
@@ -58,13 +68,20 @@ body{
     justify-content: center;
     margin-top: 2px;
     text-align: start;
-    width: 100%;
+    width: 95%;
     height: 100%;
     text-align: start;
     padding: 5px;
-    background-color: aquamarine;
+    background-color: rgb(57, 115, 150);
     margin: 5px;
     border: 1px solid black;
+    border-radius: 10%;
+    transition: 1s ease-in-out;
+}
+.hide{
+    display: none !important;
+    transition: display 1s ease-in-out;
+    height: 0% !important;
 }
 .aboutMeBtn{
     width: 80%;
@@ -74,6 +91,7 @@ body{
     font-size: 1.2em;
     border-radius: 5%;
 }
+/* skill */
 .skillPercent{
     width: 100%;
     border: 1px solid black;
@@ -82,4 +100,9 @@ body{
 }
 .skill{
     width: 70px;
+    margin: 10px;
+}
+.skillDiv{
+    display: flex;
+    flex-direction: row;
 }
