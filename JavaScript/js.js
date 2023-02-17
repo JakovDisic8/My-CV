@@ -131,13 +131,16 @@ function renderEducation() {
   }
 }
 
-// var aboutMeBtn = document.getElementById(`aboutMe`);
-// var myEdBtn = document.getElementById(`EduBtn`);
-// var myHobBtn = document.getElementById(`hobbBtn`);
+var aboutMeBtn = document.getElementById(`aboutMe`);
+var myEdBtn = document.getElementById(`EduBtn`);
 // var mySkillsBtn = document.getElementById(`mySkills`);
 // var myProjectsBtn = document.getElementById(`myProjects`);
 
-// aboutMeBtn.addEventListener(`click`, function () {
-//   let infoDiv = document.getElementById(`info`);
-//   infoDiv.classList.toggle(`hide`);
-// });
+aboutMeBtn.addEventListener(`click`, function () {
+  let infoDiv = document.getElementById(`info`);
+  infoDiv.classList.toggle(`hide`);
+});
+myEdBtn.addEventListener(`click`, function () {
+  let infoDiv = document.getElementById(`myEd`);
+  infoDiv.classList.toggle(`hide`);
+});
