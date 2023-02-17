@@ -10,28 +10,32 @@ var data = {
     },
     phone: "0692858301",
     img: "Img/Jakov.jpg",
+    textIntro: `Hi,My name is Jakov Disic and I am Front-End Developer.`,
+    aboutMeText: "",
+    CV: {
+      link: ``,
+      img: `Img/social/curriculum-vitae.png`,
+    },
   },
   education: [
     {
       title: "Union Nikola Tesla-poslovni i pravni fakultet",
-      desc: " Lorem ipsum dolor sit amet, consectetur adipisicing elit Consequatur consectetur, excepturi veniam necessitatibus adtempora quas alias error, dolore iusto dicta! Quasi assumenda  ipsum mollitia cumque ut doloremque, repudiandae accusantium?",
+      desc: "Bachelor's degree",
       time: {
         from: {
-          year: 0,
+          year: 2015,
         },
         to: {
-          year: 0,
+          year: 2019,
         },
       },
     },
     {
       title: " Code by Comtrade",
-      desc: " Lorem ipsum dolor sit amet, consectetur adipisicing elit Consequatur consectetur, excepturi veniam necessitatibus adtempora quas alias error, dolore iusto dicta! Quasi assumenda  ipsum mollitia cumque ut doloremque, repudiandae accusantium?",
+      desc: "Front-End Developer",
       time: {
         from: {
-          day: 0,
-          month: 0,
-          year: 0,
+          year: 2021,
         },
       },
     },
@@ -39,22 +43,16 @@ var data = {
   projects: [
     {
       title: "DnD map Creator",
-      desc: " Lorem ipsum dolor sit amet, consectetur adipisicing elit Consequatur consectetur, excepturi veniam necessitatibus adtempora quas alias error, dolore iusto dicta! Quasi assumenda  ipsum mollitia cumque ut doloremque, repudiandae accusantium?",
+      desc: "App for using and creating map for DnD game",
       time: {
-        year: 2009,
-        month: 6,
+        year: 2023,
       },
     },
     {
       title: "DnD combat table",
-      desc: " Lorem ipsum dolor sit amet, consectetur adipisicing elit Consequatur consectetur, excepturi veniam necessitatibus adtempora quas alias error, dolore iusto dicta! Quasi assumenda  ipsum mollitia cumque ut doloremque, repudiandae accusantium?",
+      desc: "App for creating DnD table used in combat",
       time: {
-        from: {
-          year: 0,
-        },
-        to: {
-          year: 0,
-        },
+        year: 2023,
       },
     },
   ],
@@ -89,18 +87,62 @@ var data = {
   social: [
     { title: "Facebook", link: ``, icon: "Img/social/facebook.png" },
     { title: "GitHub", link: ``, icon: "Img/social/github-sign.png" },
-    { title: "GMail", link: ``, icon: "Img/social/gmail.png" },
+    {
+      title: "GMail",
+      link: `mailto:jakovdisic8@gmail.com`,
+      icon: "Img/social/gmail.png",
+    },
     { title: "LinkedIn", link: ``, icon: `Img/social/linkedin (2).png` },
   ],
 };
 
-var aboutMeBtn = document.getElementById(`aboutMe`);
-var myEdBtn = document.getElementById(`myEd`);
-var myHobBtn = document.getElementById(`myHob`);
-var mySkillsBtn = document.getElementById(`mySkills`);
-var myProjectsBtn = document.getElementById(`myProjects`);
+render(data);
+function render(data) {
+  renderInfo(data.info);
+}
 
-aboutMeBtn.addEventListener(`click`, function () {
-  let infoDiv = document.getElementById(`info`);
-  infoDiv.classList.toggle(`hide`);
-});
+function renderInfo({
+  name,
+  surname,
+  adress,
+  phone,
+  img,
+  textIntro,
+  aboutMeText,
+}) {
+  let headDiv = document.getElementById(`header`);
+  headDiv.innerHTML = `  <div class="myImg" id="profileImgClk">
+  <img src="${img}" alt="${name}_${surname}Img" class="profileImg">
+</div>
+<div class="head1">
+  <h1>${textIntro}</h1>
+</div>`;
+  let aboutMeDiv = document.getElementById(`info`);
+  aboutMeDiv.innerHTML = `<a href=""><img src="" alt="">My CV</a>
+<div class="myInfo">
+    
+</div>
+<button id="EduBtn" class="aboutMeBtn">Education</button>
+<div class="education" id="myEd">
+    <div class="ed1">
+        <h2 class="edTitle">School Name</h2>
+        <p class="edTime">From:____ to:______</p>
+    </div>
+</div>
+<button id="hobbBtn" class="aboutMeBtn">Hobbie</button>
+<div class="myHobbies" id="myHob">
+    <h2>My Hobbies:</h2>
+    <p class="hobP">Hobbie</p>
+</div>`;
+}
+
+// var aboutMeBtn = document.getElementById(`aboutMe`);
+// var myEdBtn = document.getElementById(`myEd`);
+// var myHobBtn = document.getElementById(`myHob`);
+// var mySkillsBtn = document.getElementById(`mySkills`);
+// var myProjectsBtn = document.getElementById(`myProjects`);
+
+// aboutMeBtn.addEventListener(`click`, function () {
+//   let infoDiv = document.getElementById(`info`);
+//   infoDiv.classList.toggle(`hide`);
+// });
