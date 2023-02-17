@@ -8,36 +8,29 @@ var data = {
       street: "Bata Lakina",
       number: 1,
     },
-    phone: "0692858301",
     img: "Img/Jakov.jpg",
-    textIntro: `Hi,My name is Jakov Disic and I am Front-End Developer.`,
-    aboutMeText: "",
     CV: {
-      link: ``,
+      job: `Junio Front-End Developer`,
+      link: `Img / CV.pdf`,
       img: `Img/social/curriculum-vitae.png`,
     },
+    hobbies: [
+      { title: "Sport/Gym" },
+      { title: "PC Games" },
+      { title: "Table top games/DnD" },
+      { title: "Fantasy books and movies/tv shows" },
+    ],
   },
   education: [
     {
       title: "Union Nikola Tesla-poslovni i pravni fakultet",
       desc: "Bachelor's degree",
-      time: {
-        from: {
-          year: 2015,
-        },
-        to: {
-          year: 2019,
-        },
-      },
+      pdf: ``,
     },
     {
       title: " Code by Comtrade",
-      desc: "Front-End Developer",
-      time: {
-        from: {
-          year: 2021,
-        },
-      },
+      desc: "Front End Developer",
+      pdf: ``,
     },
   ],
   projects: [
@@ -78,12 +71,6 @@ var data = {
       img: `Img/skill/icons8-react-30.png`,
     },
   ],
-  hobbies: [
-    { title: "Sport/Gym" },
-    { title: "PC Games" },
-    { title: "Table top games/DnD" },
-    { title: "Fantasy books and movies/tv shows" },
-  ],
   social: [
     { title: "Facebook", link: ``, icon: "Img/social/facebook.png" },
     { title: "GitHub", link: ``, icon: "Img/social/github-sign.png" },
@@ -93,52 +80,60 @@ var data = {
       icon: "Img/social/gmail.png",
     },
     { title: "LinkedIn", link: ``, icon: `Img/social/linkedin (2).png` },
+    {
+      title: "phone",
+      link: "tel:555-555-5555",
+      icon: "Img/social/telephone-call.png",
+    },
   ],
 };
 
 render(data);
 function render(data) {
   renderInfo(data.info);
+  renderEducation(data.education);
 }
 
-function renderInfo({
-  name,
-  surname,
-  adress,
-  phone,
-  img,
-  textIntro,
-  aboutMeText,
-}) {
+function renderInfo({ name, surname, adress, img, CV, hobbies }) {
   let headDiv = document.getElementById(`header`);
   headDiv.innerHTML = `  <div class="myImg" id="profileImgClk">
   <img src="${img}" alt="${name}_${surname}Img" class="profileImg">
-</div>
-<div class="head1">
-  <h1>${textIntro}</h1>
 </div>`;
+
   let aboutMeDiv = document.getElementById(`info`);
-  aboutMeDiv.innerHTML = `<a href=""><img src="" alt="">My CV</a>
-<div class="myInfo">
-    
-</div>
-<button id="EduBtn" class="aboutMeBtn">Education</button>
+  let ispis;
+  ispis += `<a href="${CV.link}" download><img src="${CV.img}" class="socialImg" alt="">My CV</a>
+<div class="myInfo">Hi am am ${name} ${surname} and I am from ${adress.city},${adress.country}.I am a ${CV.job}.George is a versatile web designer due to his extensive history in graphic and web design. His dedication to 
+continuously learning about new web design 
+trends and concepts has made him a valuable member of the team. With eight years of experience and a master's in web design, his expertise can help customers modernize with websites and appeal to expanding customer populations.</div>
+<div class="hobbyes">My hobbies are:`;
+  for (let i = 0; i < hobbies.length; i++) {
+    let hobby = data.info.hobbies[i];
+    ispis += `<div class="hobby">${hobby.title}</div>`;
+  }
+  ispis += `</div><button id="EduBtn" class="aboutMeBtn">Education</button>
 <div class="education" id="myEd">
-    <div class="ed1">
-        <h2 class="edTitle">School Name</h2>
-        <p class="edTime">From:____ to:______</p>
-    </div>
 </div>
-<button id="hobbBtn" class="aboutMeBtn">Hobbie</button>
-<div class="myHobbies" id="myHob">
-    <h2>My Hobbies:</h2>
-    <p class="hobP">Hobbie</p>
 </div>`;
+  aboutMeDiv.innerHTML = ispis;
+}
+function renderEducation() {
+  for (let i = 0; i < data.education.length; i++) {
+    let education = data.education[i];
+    let educationDiv = document.getElementById("myEd");
+    educationDiv.innerHTML += renderArticle(education);
+    function renderArticle({ title, desc, pdf }) {
+      return `<div class="ed1">
+      <h2 class="edTitle">${title}-${desc}</h2>
+      <a href="${pdf}">${title} Diploma.pdf<a>
+  </div>`;
+    }
+  }
 }
 
 // var aboutMeBtn = document.getElementById(`aboutMe`);
-// var myEdBtn = document.getElementById(`myEd`);
-// var myHobBtn = document.getElementById(`myHob`);
+// var myEdBtn = document.getElementById(`EduBtn`);
+// var myHobBtn = document.getElementById(`hobbBtn`);
 // var mySkillsBtn = document.getElementById(`mySkills`);
 // var myProjectsBtn = document.getElementById(`myProjects`);
 

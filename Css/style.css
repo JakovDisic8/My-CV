@@ -6,6 +6,12 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+a{
+    color:white;
+}
+a:hover{
+    color: antiquewhite;
+}
 /* Social */
 .socialDiv{
     top:0px;
