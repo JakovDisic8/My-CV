@@ -96,22 +96,22 @@ function render(data) {
 
 function renderInfo({ name, surname, adress, img, CV, hobbies }) {
   let headDiv = document.getElementById(`header`);
-  headDiv.innerHTML = `  <div class="myImg" id="profileImgClk">
+  headDiv.innerHTML = `<div class="myImg" id="profileImgClk">
   <img src="${img}" alt="${name}_${surname}Img" class="profileImg">
 </div>`;
 
   let aboutMeDiv = document.getElementById(`info`);
   let ispis;
-  ispis += `<a href="${CV.link}" download><img src="${CV.img}" class="socialImg" alt="">My CV</a>
+  ispis = `<div class="b1"><a href="${CV.link}" download><img src="${CV.img}" class="socialImg" alt="">My CV</a></div>
 <div class="myInfo">Hi am am ${name} ${surname} and I am from ${adress.city},${adress.country}.I am a ${CV.job}.George is a versatile web designer due to his extensive history in graphic and web design. His dedication to 
 continuously learning about new web design 
 trends and concepts has made him a valuable member of the team. With eight years of experience and a master's in web design, his expertise can help customers modernize with websites and appeal to expanding customer populations.</div>
-<div class="hobbyes">My hobbies are:`;
+<div class="hobbyes"><p>My hobbies are:</p><ul>`;
   for (let i = 0; i < hobbies.length; i++) {
     let hobby = data.info.hobbies[i];
-    ispis += `<div class="hobby">${hobby.title}</div>`;
+    ispis += `<li class="hobby">${hobby.title}</li>`;
   }
-  ispis += `</div><button id="EduBtn" class="aboutMeBtn">Education</button>
+  ispis += `</ul></div><button id="EduBtn" class="aboutMeBtn">Education</button>
 <div class="education" id="myEd">
 </div>
 </div>`;
